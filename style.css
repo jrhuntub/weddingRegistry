@@ -13,6 +13,8 @@ body {
 	background-size: cover;
 
 	h1 {
+        display: flex;
+        flex-wrap: wrap;
 		font-family: Garamond;
 		font: 200;
 		font-size: 65px;
@@ -28,72 +30,72 @@ ul {
 	color: black;
 }
 
-    #linksPage {
-        margin: 10px 10px;
-        height:44.5rem;
-        background-color: lightslategray;
-        font-family: serif;
-        font-size: x-large;
+#linksPage {
+    margin: 10px 10px;
+    height:44.5rem;
+    background-color: lightslategray;
+    font-family: serif;
+    font-size: x-large;
 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        
+        background-color: rgb(110, 45, 176);
+        text-shadow: 2px 2px black;
+        color: white;
+        padding: 1% 10%;
+        box-shadow: 2px 2px black;
+    }
 
-        h1 {
-            background-color: lavender;
-            padding: 1% 10%;
-            box-shadow: 2px 2px black;
-        }
+    #linkList ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        gap: 80px;
 
-        #linkList ul {
+        text-shadow: none;
+        
+        li {
             display: flex;
-            flex-direction: row;
-            max-width: 100px;
-            justify-content: center;
-            align-items: center;
+            flex-direction: column;
 
-            text-shadow: none;
-            
-            li {
-                padding: 0 40%;
+            /*
+            p {
+                padding: 0 0;
+                font-size: large;
+                color: darkslateblue;
+                padding: 2%;
+                margin: 0 0;
 
+            }*/
+
+            a {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
-                align-items: center;
 
-                /*
-                p {
-                    padding: 0 0;
-                    font-size: large;
-                    color: darkslateblue;
-                    padding: 2%;
-                    margin: 0 0;
+                background-color: white;
+                box-shadow: 3px 3px black;
 
-                }*/
+                min-height: 120px;
+                width: 250px;
+                max-width: 100%;
+                padding: 20px;
+            }
 
-                a {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
+            a:hover {
+                background-color: rgba(255, 255, 255, 0.837);
+                box-shadow: -3px -3px black;
+            }
 
-                    background-color: white;
-                    box-shadow: 3px 3px black;
-
-                    min-height: 120px;
-                    min-width: 250px;
-                    padding: 25px;
-                }
-
-                a:hover {
-                    background-color: rgba(255, 255, 255, 0.837);
-                    box-shadow: -3px -3px black;
-                }
-
-                .Kohls {
-                    padding: 40px;
-                }
+            .Kohls {
+                padding: 35px;
             }
         }
     }
+}
