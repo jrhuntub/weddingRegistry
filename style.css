@@ -1,31 +1,99 @@
 body {
-    display: flex;
+	margin: 0 0;
+	background-color: black;
 }
-div.head {
-    margin-top: 0;
-    margin-bottom: 20%;
+#head {
+	display: flex;
+	justify-content: left;
 
-    background-image: url(lavender-flower.jpg);
+	padding-left: 3%;
 
-    h1 {
-        font-family: cursive;
-        font: 200;
+	background-image: url("lavender-flower.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	h1 {
+		font-family: Garamond;
+		font: 200;
+		font-size: 65px;
+		color: white;
+		text-shadow: 3px 3px black;
+	}
+}
+
+a,
+ul {
+	text-decoration: none;
+	list-style: none;
+	color: black;
+}
+
+    #linksPage {
+        margin: 10px 10px;
+        height:44.5rem;
+        background-color: lightslategray;
+        font-family: serif;
         font-size: x-large;
-        color: white;
-        text-shadow: 2px 2px black;
-    }
-}
 
-a, ul {
-    text-decoration: none;
-    list-style: none;
-}
-
-div.linksPage {
-    background-color: lightslategray;
-    display: flex;
-
-    .linkList ul {
         display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h1 {
+            background-color: lavender;
+            padding: 1% 10%;
+            box-shadow: 2px 2px black;
+        }
+
+        #linkList ul {
+            display: flex;
+            flex-direction: row;
+            max-width: 100px;
+            justify-content: center;
+            align-items: center;
+
+            text-shadow: none;
+            
+            li {
+                padding: 0 40%;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                /*
+                p {
+                    padding: 0 0;
+                    font-size: large;
+                    color: darkslateblue;
+                    padding: 2%;
+                    margin: 0 0;
+
+                }*/
+
+                a {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+
+                    background-color: white;
+                    box-shadow: 3px 3px black;
+
+                    min-height: 120px;
+                    min-width: 250px;
+                    padding: 25px;
+                }
+
+                a:hover {
+                    background-color: rgba(255, 255, 255, 0.837);
+                    box-shadow: -3px -3px black;
+                }
+
+                .Kohls {
+                    padding: 40px;
+                }
+            }
+        }
     }
-}
