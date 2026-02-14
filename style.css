@@ -1,6 +1,7 @@
 body {
 	margin: 0 0;
 	background-color: black;
+    box-sizing: border-box;
 }
 #head {
 	display: flex;
