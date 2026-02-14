@@ -1,11 +1,12 @@
 body {
 	margin: 0 0;
-	background-color: black;
-    box-sizing: border-box;
+	background-color: rgb(110, 45, 176);
+	box-sizing: border-box;
 }
 #head {
 	display: flex;
 	justify-content: left;
+	margin: 10px 10px;
 
 	padding-left: 3%;
 
@@ -14,8 +15,8 @@ body {
 	background-size: cover;
 
 	h1 {
-        display: flex;
-        flex-wrap: wrap;
+		display: flex;
+		flex-wrap: wrap;
 		font-family: Garamond;
 		font: 200;
 		font-size: 65px;
@@ -32,40 +33,48 @@ ul {
 }
 
 #linksPage {
-    margin: 10px 10px;
-    min-height:44.5rem;
-    background-color: lightslategray;
-    font-family: serif;
-    font-size: x-large;
+	margin: 10px 10px;
+	min-height: 43.75rem;
+	background-color: lightslategray;
+	font-family: Garamond;
+	font-size: x-large;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 
-    h1 {
-        display: flex;
-        
-        background-color: rgb(110, 45, 176);
-        text-shadow: 2px 2px black;
-        color: white;
-        padding: 1% 10%;
-        box-shadow: 2px 2px black;
+	h1 {
+		display: flex;
+
+		background-color: rgb(110, 45, 176);
+		text-shadow: 2px 2px black;
+		color: white;
+		border: 3.5px solid black;
+		padding: 1% 10%;
+	}
+
+    #lavender {
+        transform: scaleX(-1);
     }
 
-    #linkList ul {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        max-width: 1200px;
-        gap: 80px;
+	#linkList ul {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
 
-        text-shadow: none;
-        
-        li {
-            display: flex;
-            flex-direction: column;
+		max-width: 1200px;
+		gap: 80px;
+		padding: 0 0;
 
-            /*
+		text-shadow: none;
+
+		li {
+			display: flex;
+			flex-direction: column;
+
+			/*
             p {
                 padding: 0 0;
                 font-size: large;
@@ -75,28 +84,35 @@ ul {
 
             }*/
 
-            a {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
+			a {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
 
-                background-color: white;
-                box-shadow: 3px 3px black;
+				background-color: white;
+				box-shadow: 3px 3px black;
+				border: 4px solid black;
 
-                min-height: 120px;
-                width: 250px;
-                max-width: 100%;
-                padding: 20px 20px;
-            }
+				min-height: 120px;
+				width: 250px;
+				max-width: 100%;
+				padding: 20px 20px;
+			}
 
-            a:hover {
-                background-color: rgba(255, 255, 255, 0.837);
-                box-shadow: -3px -3px black;
-            }
+			a:hover {
+				background-color: rgba(255, 255, 255, 0.727);
+				box-shadow: -2px -2px black;
+			}
 
-            .Kohls {
-                padding: 35px 20px;
-            }
-        }
-    }
+			.Belk,
+			.Kohls {
+				padding: 35px 20px;
+			}
+
+			.RSVP {
+				padding: 6px 20px;
+			}
+		}
+	}
 }
