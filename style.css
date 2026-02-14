@@ -1,0 +1,31 @@
+body {
+    display: flex;
+}
+div.head {
+    margin-top: 0;
+    margin-bottom: 20%;
+
+    background-image: url(lavender-flower.jpg);
+
+    h1 {
+        font-family: cursive;
+        font: 200;
+        font-size: x-large;
+        color: white;
+        text-shadow: 2px 2px black;
+    }
+}
+
+a, ul {
+    text-decoration: none;
+    list-style: none;
+}
+
+div.linksPage {
+    background-color: lightslategray;
+    display: flex;
+
+    .linkList ul {
+        display: flex;
+    }
+}
