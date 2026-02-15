@@ -20,6 +20,7 @@ body {
 		font-family: Garamond;
 		font: 200;
 		font-size: 65px;
+		font-size: clamp(40px, 50px, 65px);
 		color: white;
 		text-shadow: 3px 3px black;
 	}
@@ -46,17 +47,26 @@ ul {
 
 	h1 {
 		display: flex;
+		max-width: 70%;
+		align-items: center;
+
+		font-size: clamp(1.6rem, 5vw, 4rem);
 
 		background-color: rgb(110, 45, 176);
 		text-shadow: 2px 2px black;
 		color: white;
 		border: 3.5px solid black;
 		padding: 1% 10%;
+
+		img {
+			width: clamp(35px, 52.5px, 70px);
+			height: clamp(15px, 32.5px, 50px);
+		}
 	}
 
-    #lavender {
-        transform: scaleX(-1);
-    }
+	#lavender {
+		transform: scaleX(-1);
+	}
 
 	#linkList ul {
 		display: flex;
@@ -112,6 +122,65 @@ ul {
 
 			.RSVP {
 				padding: 6px 20px;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 722px) {
+	#linksPage {
+		#linkList ul {
+			gap: 40px;
+
+			li {
+				a {
+					width: 100px;
+					max-width: 100%;
+					padding: 8px 10px;
+
+					img {
+						width: clamp(35px, 120px, 200px);
+						height: clamp(15px, 70px, 150px);
+					}
+				}
+
+				a:hover {
+					box-shadow: -1px -1px black;
+				}
+
+				.RSVP,
+				.Belk,
+				.Kohls {
+					padding: 8px 10px;
+				}
+
+				.RSVP {
+					img {
+						width: 180px;
+						height: 120px;
+					}
+				}
+
+				.Belk {
+					img {
+						width: 90px;
+						height: 40px;
+					}
+				}
+
+				.Kohls {
+					img {
+						width: 90px;
+						height: 25px;
+					}
+				}
+
+				.Walmart {
+					img {
+						width: 100px;
+						height: 80px;
+					}
+				}
 			}
 		}
 	}
