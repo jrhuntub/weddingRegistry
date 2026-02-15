@@ -47,10 +47,10 @@ ul {
 
 	h1 {
 		display: flex;
-		max-width: 70%;
+		max-width: 80%;
 		align-items: center;
 
-		font-size: clamp(1.6rem, 5vw, 4rem);
+		font-size: clamp(1.65rem, 5vw, 4rem);
 
 		background-color: rgb(110, 45, 176);
 		text-shadow: 2px 2px black;
@@ -59,8 +59,8 @@ ul {
 		padding: 1% 10%;
 
 		img {
-			width: clamp(35px, 52.5px, 70px);
-			height: clamp(15px, 32.5px, 50px);
+			width: clamp(35px, 61.5px, 70px);
+			height: clamp(15px, 41.5px, 50px);
 		}
 	}
 
@@ -177,8 +177,8 @@ ul {
 
 				.Walmart {
 					img {
-						width: 100px;
-						height: 80px;
+						width: 98px;
+						height: 78px;
 					}
 				}
 			}
