@@ -92,10 +92,16 @@ ul {
 				margin: 6.5% 0;
 
 				color: rgb(152, 92, 212);
+				font: 500;
 				font-size: clamp(0.75rem, 1.3vw, 2rem);
 				font-family: Garamond;
 				font-style: italic;
 				text-shadow: 1px 1px rgb(170, 169, 169);
+
+				background-color: aliceblue;
+				border-radius: 50px;
+				box-shadow: 1px 1px rgb(152, 92, 212);
+				padding: 5px;
 			}
 
 			a {
@@ -143,6 +149,16 @@ ul {
 	}
 }
 
+@media screen and (max-width: 1530px) {
+	#linksPage {
+		#linkList ul {
+			margin: 15px 0;
+			column-gap: 80px;
+			row-gap: 35px;
+		}
+	}
+}
+
 @media screen and (max-width: 722px) {
 	#head {
 		h1 {
@@ -160,7 +176,7 @@ ul {
 		}
 
 		#linkList ul {
-			gap: 40px;
+			gap: 45px;
 
 			li {
 				a {
