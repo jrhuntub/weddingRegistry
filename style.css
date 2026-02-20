@@ -78,6 +78,7 @@ ul {
 		min-height: 502px;
 		gap: 80px;
 		padding: 0 0;
+		padding-bottom: 60px;
 
 		text-shadow: none;
 
@@ -112,11 +113,15 @@ ul {
 			}
 
 			.RSVP {
-				padding: 6px 10px;
+				padding: 1px 10px;
 			}
 
 			.target {
 				padding: 25.4px 10px;
+			}
+
+			.Walmart {
+				padding: 30px 10px;
 			}
 		}
 	}
@@ -152,7 +157,8 @@ ul {
 
 				.RSVP,
 				.Belk,
-				.Kohls {
+				.Kohls,
+				.target {
 					padding: 1px 10px;
 				}
 
@@ -180,7 +186,7 @@ ul {
 				.Walmart {
 					img {
 						width: 98px;
-						height: 68px;
+						height: 65px;
 					}
 					
 				}
