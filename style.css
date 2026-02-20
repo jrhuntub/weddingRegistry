@@ -22,9 +22,9 @@ body {
 		font-family: Garamond;
 		font: 200;
 		font-size: 65px;
-		font-size: clamp(40px, 50px, 65px);
+		font-size: 50px;
 		color: white;
-		text-shadow: 3px 3px black;
+		text-shadow: 3px 3px rgb(59, 6, 75);
 	}
 }
 
@@ -37,8 +37,8 @@ ul {
 
 #linksPage {
 	margin: 0 10px;
-	min-height: 43.75rem;
-	background-color: lightslategray;
+
+	background-color: rgb(207, 192, 221);
 	font-family: Garamond;
 	font-size: x-large;
 
@@ -52,13 +52,10 @@ ul {
 		max-width: 80%;
 		align-items: center;
 
-		font-size: clamp(1.65rem, 5vw, 4rem);
-
-		background-color: rgb(110, 45, 176);
-		text-shadow: 2px 2px black;
-		color: white;
-		border: 3.5px solid black;
-		padding: .5% 4%;
+		font-size: clamp(1.9rem, 5vw, 4rem);
+		text-shadow: 1.5px 1.5px rgb(84, 8, 107);
+		color: rgb(173, 108, 238);
+		padding: 0 4%;
 
 		img {
 			width: clamp(30px, 82px, 100px);
@@ -79,14 +76,27 @@ ul {
 		max-width: 1200px;
 		min-height: 502px;
 		gap: 80px;
+
+		margin: 25px 0;
 		padding: 0 0;
-		padding-bottom: 60px;
 
 		text-shadow: none;
 
 		li {
 			display: flex;
 			flex-direction: column;
+
+			p {
+				display: flex;
+				justify-content: center;
+				margin: 6.5% 0;
+
+				color: rgb(152, 92, 212);
+				font-size: clamp(0.75rem, 1.3vw, 2rem);
+				font-family: Garamond;
+				font-style: italic;
+				text-shadow: 1px 1px rgb(170, 169, 169);
+			}
 
 			a {
 				display: flex;
@@ -95,18 +105,22 @@ ul {
 				align-items: center;
 
 				background-color: white;
-				box-shadow: 3px 3px black;
-				border: 4px solid black;
+				box-shadow: 3px 3px rgba(0, 0, 0, 0.1);
+				border-radius: 12px;
 
 				min-height: 120px;
 				width: 250px;
 				max-width: 100%;
 				padding: 20px 10px;
+
+				transition:
+					transform 0.3s ease,
+					box-shadow 0.3s ease;
 			}
 
 			a:hover {
-				background-color: rgba(255, 255, 255, 0.727);
-				box-shadow: -2px -2px black;
+				box-shadow: 0 12px 22px rgba(0, 0, 0, 0.12);
+				transform: translateY(-5px) translateX(-5px);
 			}
 
 			.Belk,
@@ -119,23 +133,30 @@ ul {
 			}
 
 			.target {
-				padding: 25.4px 10px;
+				padding: 31px 10px;
 			}
 
 			.Walmart {
-				padding: 30px 10px;
+				padding: 35px 10px;
 			}
 		}
 	}
 }
 
 @media screen and (max-width: 722px) {
+	#head {
+		h1 {
+			font-size: 30px;
+		}
+	}
 	#linksPage {
 		h1 {
 			img {
-				width: 54px;
-				height: 34px;
+				width: 50px;
+				height: 30px;
 			}
+
+			text-shadow: 1px 1px black;
 		}
 
 		#linkList ul {
@@ -151,10 +172,6 @@ ul {
 						width: clamp(35px, 120px, 200px);
 						height: clamp(15px, 72px, 150px);
 					}
-				}
-
-				a:hover {
-					box-shadow: -1px -1px black;
 				}
 
 				.RSVP,
@@ -191,7 +208,6 @@ ul {
 						width: 98px;
 						height: 65px;
 					}
-					
 				}
 
 				.target {
