@@ -9,8 +9,14 @@ const router = express.Router();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// GET: Show the Homepage (Index)
+// GET: Show the Homepage
 router.get('/', (req, res) => {
+    // This tells Express to go up one folder (../), look in 'public', and send index.html
+    res.sendFile(path.join(__dirname, '../views/welcomePage.html'));
+});
+
+// GET: Show Links (Index)
+router.get('/links', (req, res) => {
     // This tells Express to go up one folder (../), look in 'public', and send index.html
     res.sendFile(path.join(__dirname, '../views/index.html'));
 });

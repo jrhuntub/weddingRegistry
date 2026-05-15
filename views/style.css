@@ -51,16 +51,13 @@ ul {
 	h1 {
 		display: flex;
 		max-width: 80%;
-		align-items: center;
+		align-items: normal;
 
 		margin: 2%;
 		padding: 0 4%;
 
 		font-size: clamp(1.9rem, 5vw, 4rem);
-		text-shadow: 1.5px 1.5px rgb(84, 8, 107);
-		color: rgb(173, 108, 238);
-		text-decoration: 2.5px underline;
-		text-underline-offset: 8%;
+		color: rgb(84, 8, 107);
 
 		img {
 			width: clamp(30px, 82px, 100px);
@@ -95,7 +92,7 @@ ul {
 				justify-content: center;
 				margin: 6.5% 0;
 
-				color: rgb(152, 92, 212);
+				color: rgb(116, 51, 181);
 				font: 500;
 				font-size: clamp(0.75rem, 1.3vw, 2rem);
 				font-family: "Lucida Sans";
@@ -132,6 +129,11 @@ ul {
 				transform: translateY(-5px) translateX(-5px);
 			}
 
+			.paypal:hover, .applePay:hover, .cashApp:hover {
+				transform: none;
+				box-shadow: 3px 3px rgba(0, 0, 0, 0.1);
+			}
+
 			.honeymoon {
 				padding: 13.5px 10px;
 			}
@@ -152,6 +154,85 @@ ul {
 			.Walmart {
 				padding: 35px 10px;
 			}
+
+			.applePay,
+			.cashApp,
+			.paypal,
+			.venmo,
+			.back {
+				padding: 13.5px 10px;
+			}
+		}
+	}
+}
+
+#homeContent {
+	margin: 0 10px;
+	padding: 150px;
+	background-color: rgb(207, 192, 221);
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 50px;
+}
+
+.home-image-container {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+}
+
+.couple-photo {
+	max-width: 113%;
+	height: auto;
+	border-radius: 12px;
+	box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.15);
+}
+
+.home-text-container {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+
+	h2 {
+		font-family: Garamond, serif;
+		color: rgb(84, 8, 107);
+		font-size: clamp(2.5rem, 4vw, 4rem);
+		margin-top: 0;
+		margin-bottom: 20px;
+		text-shadow: 1px 1px rgb(170, 169, 169);
+	}
+
+	p {
+		font-family: "Lucida Sans", sans-serif;
+		font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+		color: rgb(59, 6, 75);
+		line-height: 1.6;
+		margin-bottom: 40px;
+		padding: 0 20px;
+	}
+
+	.links-button {
+		align-self: center;
+		background-color: white;
+		color: rgb(116, 51, 181);
+		font-family: "Lucida Sans", sans-serif;
+		font-weight: bold;
+		font-size: 1.2rem;
+		padding: 15px 35px;
+		border-radius: 30px;
+		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+		transition:
+			transform 0.3s ease,
+			box-shadow 0.3s ease;
+
+		&:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+			color: rgb(84, 8, 107);
 		}
 	}
 }
@@ -177,9 +258,6 @@ ul {
 				width: 50px;
 				height: 30px;
 			}
-
-			text-decoration: 1.5px underline;
-			text-shadow: 1px 1px black;
 		}
 
 		#linkList ul {
@@ -248,6 +326,18 @@ ul {
 						width: 90px;
 						height: 80px;
 					}
+				}
+
+				.applePay,
+				.cashApp,
+				.paypal,
+				.venmo,
+				.back {
+					img {
+						width: 90px;
+						height: 80px;
+					}
+					padding: 1px 10px;
 				}
 			}
 		}
