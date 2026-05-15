@@ -261,7 +261,7 @@ ul {
 		}
 
 		#linkList ul {
-			gap: 45px;
+			gap: 35px;
 
 			li {
 				a {
@@ -275,16 +275,20 @@ ul {
 					}
 				}
 
+				p {
+					text-shadow: .5px .5px rgb(170, 169, 169);
+				}
+
 				.honeymoon,
 				.Belk,
 				.Kohls,
 				.target,
 				.Walmart {
-					padding: 1px 10px;
+					padding: 0px 10px;
 				}
 
 				.RSVP {
-					padding: 1px 13px;
+					padding: 0px 13px;
 
 					img {
 						width: 180px;
@@ -293,7 +297,7 @@ ul {
 				}
 
 				.Belk {
-					padding: 1px 12px;
+					padding: 0px 12px;
 					img {
 						width: 90px;
 						height: 37px;
@@ -337,9 +341,41 @@ ul {
 						width: 90px;
 						height: 80px;
 					}
-					padding: 1px 10px;
+					padding: 0px 10px;
+				}
+
+				.apple {
+					padding: 6px;
 				}
 			}
 		}
 	}
+
+    #homeContent {
+        flex-direction: column; 
+        padding: 20px 15px;     
+        gap: 25px;              
+		img {
+			max-width: 90%;
+			height: auto;
+		}
+    }
+
+    .home-text-container h2 {
+        font-size: 2.5rem;
+        margin-bottom: 5px;
+    }
+
+    .home-text-container p {
+        font-size: 1.0rem;
+        padding: 0; 
+        margin-bottom: 30px;
+    }
+
+    .home-text-container .links-button {
+        padding: 15px;
+        font-size: 1.1rem;
+        width: 70%; 
+        box-sizing: border-box;
+    }
 }
