@@ -1,22 +1,25 @@
 body {
 	margin: 0;
-	padding: 10px;
 	box-sizing: border-box;
 	min-height: 100vh;
 	min-height: 100svh;
 	display: flex;
 	flex-direction: column;
-	background-color: rgb(116, 51, 181);
+	background-color: white;
 }
 
 #head {
 	display: flex;
 	justify-content: left;
-	margin: 0 0 10px 0;
+	align-content: center;
+	margin: 0 0 0 0;
+	padding: 2% 0;
 	padding-left: 3%;
 	background-image: url("../images/lavender-flower.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
+	border: 2px solid black;
+	border-bottom: none;
 
 	h1 {
 		display: flex;
@@ -28,7 +31,9 @@ body {
 		color: white;
 	}
 }
-
+#homeContent {
+	border: 2px solid black;
+}
 a,
 ul {
 	text-decoration: none;
@@ -43,7 +48,7 @@ ul {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 10px 40px;
-	background-color: rgb(207, 192, 221);
+	background: radial-gradient(circle at top left, rgb(233, 220, 245) 0%, rgb(205, 189, 221) 60%, rgb(184, 162, 206) 100%);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -56,30 +61,30 @@ ul {
 
 #linksPage {
 	flex-direction: column;
-
+	border: 2px solid black;
 	h1 {
-        display: flex;
-        max-width: 90%; 
-        align-items: center;
-        justify-content: center;
-        margin: 0 0 20px 0;
-        padding: 0;
-        font-weight: 200;
-        font-size: clamp(1.9rem, 5vw, 4rem);
+		display: flex;
+		max-width: 90%;
+		align-items: center;
+		justify-content: center;
+		margin: 0 0 20px 0;
+		padding: 0;
+		font-weight: 200;
+		font-size: clamp(1.9rem, 5vw, 4rem);
 		flex-wrap: nowrap;
-        color: rgb(84, 8, 107);
-        
-        span {
-            text-align: center;
-            padding: 0 10px;
-        }
+		color: rgb(84, 8, 107);
 
-        img {
-            flex-shrink: 0; 
-            width: clamp(30px, 82px, 100px);
-            height: clamp(10px, 62px, 80px);
-        }
-    }
+		span {
+			text-align: center;
+			padding: 0 10px;
+		}
+
+		img {
+			flex-shrink: 0;
+			width: clamp(30px, 82px, 100px);
+			height: clamp(10px, 62px, 80px);
+		}
+	}
 
 	#lavender {
 		transform: scaleX(-1);
@@ -108,7 +113,7 @@ ul {
 				font-size: clamp(0.75rem, 1.3vw, 2rem);
 				font-family: "Lucida Sans";
 				text-shadow: 1px 1px rgb(170, 169, 169);
-				background-color: aliceblue;
+				background-color: rgb(245, 249, 253);
 				border-radius: 50px;
 				box-shadow: 1px 1px rgb(152, 92, 212);
 				padding: 5px;
@@ -209,7 +214,7 @@ ul {
 
 	.links-button {
 		align-self: center;
-		background-color: white;
+		background-color: rgb(245, 249, 253);
 		color: rgb(116, 51, 181);
 		font-family: "Lucida Sans", sans-serif;
 		font-weight: bold;
@@ -333,20 +338,20 @@ ul {
 	}
 
 	#homeContent {
-        flex-direction: column;
-        padding: 20px 15px;
-        gap: 25px;
-        
-        .home-image-container {
-            flex: 0 0 auto; 
-        }
+		flex-direction: column;
+		padding: 20px 15px;
+		gap: 25px;
 
-        img {
-            max-width: 90%;
-            height: auto;
-            object-fit: cover;
-        }
-    }
+		.home-image-container {
+			flex: 0 0 auto;
+		}
+
+		img {
+			max-width: 90%;
+			height: auto;
+			object-fit: cover;
+		}
+	}
 
 	.home-text-container h2 {
 		font-size: 2.5rem;
