@@ -5,6 +5,7 @@ body {
 	min-height: 100svh;
 	display: flex;
 	flex-direction: column;
+	background-color: rgb(184, 162, 206);
 }
 
 #head {
