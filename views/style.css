@@ -1,364 +1,332 @@
 body {
-	margin: 0 0;
-	background-color: rgb(116, 51, 181);
-	box-sizing: border-box;
+    margin: 0;
+    padding: 10px;
+    box-sizing: border-box;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(116, 51, 181);
 }
+
 #head {
-	display: flex;
-	justify-content: left;
-	margin: 0 10px;
-	margin-top: 10px;
-	margin-bottom: 8px;
+    display: flex;
+    justify-content: left;
+    margin: 0 0 10px 0;
+    padding-left: 3%;
+    background-image: url("../images/lavender-flower.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 
-	padding-left: 3%;
-
-	background-image: url("../images/lavender-flower.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
-
-	h1 {
-		display: flex;
-		flex-wrap: wrap;
-		font-family: Garamond;
-		font: 200;
-		font-size: 65px;
-		font-size: 50px;
-		color: white;
-		text-shadow: 3px 3px rgb(59, 6, 75);
-	}
+    h1 {
+        display: flex;
+        flex-wrap: wrap;
+        font-family: Garamond;
+		font-weight: normal;
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        font-size: 50px;
+        color: white;
+    }
 }
 
 a,
 ul {
-	text-decoration: none;
-	list-style: none;
-	color: black;
+    text-decoration: none;
+    list-style: none;
+    color: black;
 }
 
+#homeContent,
 #linksPage {
-	margin: 0 10px;
-	padding-bottom: 0px;
-
-	background-color: rgb(207, 192, 221);
-	font-family: Garamond;
-	font-size: x-large;
-
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-
-	h1 {
-		display: flex;
-		max-width: 80%;
-		align-items: normal;
-
-		margin: 2%;
-		padding: 0 4%;
-
-		font-size: clamp(1.9rem, 5vw, 4rem);
-		color: rgb(84, 8, 107);
-
-		img {
-			width: clamp(30px, 82px, 100px);
-			height: clamp(10px, 62px, 80px);
-		}
-	}
-
-	#lavender {
-		transform: scaleX(-1);
-	}
-
-	#linkList ul {
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		justify-content: center;
-
-		max-width: 1200px;
-		min-height: 502px;
-
-		padding: 0 0;
-
-		column-gap: 70px;
-		row-gap: 33px;
-
-		li {
-			display: flex;
-			flex-direction: column;
-
-			p {
-				display: flex;
-				justify-content: center;
-				margin: 6.5% 0;
-
-				color: rgb(116, 51, 181);
-				font: 500;
-				font-size: clamp(0.75rem, 1.3vw, 2rem);
-				font-family: "Lucida Sans";
-				text-shadow: 1px 1px rgb(170, 169, 169);
-
-				background-color: aliceblue;
-				border-radius: 50px;
-				box-shadow: 1px 1px rgb(152, 92, 212);
-				padding: 5px;
-			}
-
-			a {
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				align-items: center;
-
-				background-color: white;
-				box-shadow: 3px 3px rgba(0, 0, 0, 0.1);
-				border-radius: 12px;
-
-				min-height: 120px;
-				width: 250px;
-				max-width: 100%;
-				padding: 20px 10px;
-
-				transition:
-					transform 0.3s ease,
-					box-shadow 0.3s ease;
-			}
-
-			a:hover {
-				box-shadow: 0 12px 22px rgba(0, 0, 0, 0.12);
-				transform: translateY(-5px) translateX(-5px);
-			}
-
-			.paypal:hover, .applePay:hover, .cashApp:hover {
-				transform: none;
-				box-shadow: 3px 3px rgba(0, 0, 0, 0.1);
-			}
-
-			.honeymoon {
-				padding: 13.5px 10px;
-			}
-
-			.Belk,
-			.Kohls {
-				padding: 35px 10px;
-			}
-
-			.RSVP {
-				padding: 1px 10px;
-			}
-
-			.target {
-				padding: 31px 10px;
-			}
-
-			.Walmart {
-				padding: 35px 10px;
-			}
-
-			.applePay,
-			.cashApp,
-			.paypal,
-			.venmo,
-			.back {
-				padding: 13.5px 10px;
-			}
-		}
-	}
+    flex: 1;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+	padding: 10px 40px;
+    background-color: rgb(207, 192, 221);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #homeContent {
-	margin: 0 10px;
-	padding: 150px;
-	background-color: rgb(207, 192, 221);
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
-	gap: 50px;
+    flex-direction: row;
+    gap: 50px;
+}
+
+#linksPage {
+    flex-direction: column;
+
+    h1 {
+        display: flex;
+        max-width: 80%;
+        align-items: normal;
+        margin: 0 0 20px 0;
+        padding: 0 4%;
+		font-weight: 200;
+        font-size: clamp(1.9rem, 5vw, 4rem);
+        color: rgb(84, 8, 107);
+
+        img {
+            width: clamp(30px, 82px, 100px);
+            height: clamp(10px, 62px, 80px);
+        }
+    }
+
+    #lavender {
+        transform: scaleX(-1);
+    }
+
+    #linkList ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 1200px;
+        padding: 0;
+        column-gap: 70px;
+        row-gap: 20px;
+
+        li {
+            display: flex;
+            flex-direction: column;
+
+            p {
+                display: flex;
+                justify-content: center;
+                margin: 12px 0 0 0;
+                color: rgb(116, 51, 181);
+                font: 500;
+                font-size: clamp(0.75rem, 1.3vw, 2rem);
+                font-family: "Lucida Sans";
+                text-shadow: 1px 1px rgb(170, 169, 169);
+                background-color: aliceblue;
+                border-radius: 50px;
+                box-shadow: 1px 1px rgb(152, 92, 212);
+                padding: 5px;
+            }
+
+            a {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background-color: white;
+                box-shadow: 3px 3px rgba(0, 0, 0, 0.1);
+                border-radius: 12px;
+                min-height: 120px;
+                width: 250px;
+                max-width: 100%;
+                padding: 20px 10px;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            a:hover {
+                box-shadow: 0 12px 22px rgba(0, 0, 0, 0.12);
+                transform: translateY(-5px) translateX(-5px);
+            }
+
+            .paypal:hover,
+            .applePay:hover,
+            .cashApp:hover {
+                transform: none;
+                box-shadow: 3px 3px rgba(0, 0, 0, 0.1);
+            }
+
+            .honeymoon,
+            .applePay,
+            .cashApp,
+            .paypal,
+            .venmo,
+            .back {
+                padding: 13.5px 10px;
+            }
+
+            .Belk,
+            .Kohls,
+            .Walmart {
+                padding: 35px 10px;
+            }
+
+            .target {
+                padding: 31px 10px;
+            }
+
+            .RSVP {
+                padding: 1px 10px;
+            }
+        }
+    }
 }
 
 .home-image-container {
-	flex: 1;
-	display: flex;
-	justify-content: center;
+    flex: 1;
+    display: flex;
+    justify-content: center;
 }
 
 .couple-photo {
-	max-width: 113%;
-	height: auto;
-	border-radius: 12px;
-	box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.15);
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.15);
 }
 
 .home-text-container {
-	flex: 1;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
 
-	h2 {
-		font-family: Garamond, serif;
-		color: rgb(84, 8, 107);
-		font-size: clamp(2.5rem, 4vw, 4rem);
-		margin-top: 0;
-		margin-bottom: 20px;
-		text-shadow: 1px 1px rgb(170, 169, 169);
-	}
+    h2 {
+        font-family: Garamond, serif;
+        color: rgb(84, 8, 107);
+        font-size: clamp(2.5rem, 4vw, 4rem);
+        margin-top: 0;
+        margin-bottom: 20px;
+        text-shadow: 1px 1px rgb(170, 169, 169);
+    }
 
-	p {
-		font-family: "Lucida Sans", sans-serif;
-		font-size: clamp(1.1rem, 1.5vw, 1.3rem);
-		color: rgb(59, 6, 75);
-		line-height: 1.6;
-		margin-bottom: 40px;
-		padding: 0 20px;
-	}
+    p {
+        font-family: "Lucida Sans", sans-serif;
+        font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+        color: rgb(59, 6, 75);
+        line-height: 1.6;
+        margin-bottom: 40px;
+        padding: 0 20px;
+    }
 
-	.links-button {
-		align-self: center;
-		background-color: white;
-		color: rgb(116, 51, 181);
-		font-family: "Lucida Sans", sans-serif;
-		font-weight: bold;
-		font-size: 1.2rem;
-		padding: 15px 35px;
-		border-radius: 30px;
-		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-		transition:
-			transform 0.3s ease,
-			box-shadow 0.3s ease;
+    .links-button {
+        align-self: center;
+        background-color: white;
+        color: rgb(116, 51, 181);
+        font-family: "Lucida Sans", sans-serif;
+        font-weight: bold;
+        font-size: 1.2rem;
+        padding: 15px 35px;
+        border-radius: 30px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-		&:hover {
-			transform: translateY(-5px);
-			box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-			color: rgb(84, 8, 107);
-		}
-	}
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            color: rgb(84, 8, 107);
+        }
+    }
 }
 
 @media screen and (max-width: 1530px) {
-	#linksPage {
-		#linkList ul {
-			padding-bottom: 26px;
-			margin: 15px 0;
-		}
-	}
+    #linksPage {
+        #linkList ul {
+            padding-bottom: 26px;
+            margin: 15px 0;
+        }
+    }
 }
 
 @media screen and (max-width: 722px) {
-	#head {
-		h1 {
-			font-size: 30px;
-		}
-	}
-	#linksPage {
-		h1 {
-			img {
-				width: 50px;
-				height: 30px;
-			}
-		}
+    #head {
+        h1 {
+            font-size: 30px;
+        }
+    }
 
-		#linkList ul {
-			gap: 35px;
+    #linksPage {
+        h1 {
+            img {
+                width: 50px;
+                height: 30px;
+            }
+        }
 
-			li {
-				a {
-					width: 100px;
-					max-width: 100%;
-					padding: 1px 10px;
+        #linkList ul {
+            gap: 35px;
 
-					img {
-						width: clamp(35px, 120px, 200px);
-						height: clamp(15px, 72px, 150px);
-					}
-				}
+            li {
+                a {
+                    width: 100px;
+                    max-width: 100%;
+                    padding: 1px 10px;
 
-				p {
-					text-shadow: .5px .5px rgb(170, 169, 169);
-				}
+                    img {
+                        width: clamp(35px, 120px, 200px);
+                        height: clamp(15px, 72px, 150px);
+                    }
+                }
 
-				.honeymoon,
-				.Belk,
-				.Kohls,
-				.target,
-				.Walmart {
-					padding: 0px 10px;
-				}
+                p {
+                    text-shadow: 0.5px 0.5px rgb(170, 169, 169);
+                }
 
-				.RSVP {
-					padding: 0px 13px;
+                .honeymoon,
+                .Kohls,
+                .target,
+                .Walmart,
+                .applePay,
+                .cashApp,
+                .paypal,
+                .venmo,
+                .back {
+                    padding: 0 10px;
+                }
 
-					img {
-						width: 180px;
-						height: 120px;
-					}
-				}
+                .RSVP {
+                    padding: 0 13px;
+                    img {
+                        width: 180px;
+                        height: 120px;
+                    }
+                }
 
-				.Belk {
-					padding: 0px 12px;
-					img {
-						width: 90px;
-						height: 37px;
-					}
-				}
+                .Belk {
+                    padding: 0 12px;
+                    img {
+                        width: 90px;
+                        height: 37px;
+                    }
+                }
 
-				.Kohls {
-					img {
-						width: 90px;
-						height: 25px;
-					}
-				}
+                .Kohls img {
+                    width: 90px;
+                    height: 25px;
+                }
 
-				.Walmart {
-					img {
-						width: 98px;
-						height: 64px;
-					}
-				}
+                .Walmart img {
+                    width: 98px;
+                    height: 64px;
+                }
 
-				.target {
-					img {
-						width: 120px;
-						height: 67px;
-					}
-				}
+                .target img {
+                    width: 120px;
+                    height: 67px;
+                }
 
-				.honeymoon {
-					img {
-						width: 90px;
-						height: 80px;
-					}
-				}
+                .honeymoon img,
+                .applePay img,
+                .cashApp img,
+                .paypal img,
+                .venmo img,
+                .back img {
+                    width: 90px;
+                    height: 80px;
+                }
 
-				.applePay,
-				.cashApp,
-				.paypal,
-				.venmo,
-				.back {
-					img {
-						width: 90px;
-						height: 80px;
-					}
-					padding: 0px 10px;
-				}
-
-				.apple {
-					padding: 6px;
-				}
-			}
-		}
-	}
+                .apple {
+                    padding: 6px;
+                }
+            }
+        }
+    }
 
     #homeContent {
-        flex-direction: column; 
-        padding: 20px 15px;     
-        gap: 25px;              
-		img {
-			max-width: 90%;
-			height: auto;
-		}
+        flex-direction: column;
+        padding: 20px 15px;
+        gap: 25px;
+        img {
+            max-width: 90%;
+            height: auto;
+        }
     }
 
     .home-text-container h2 {
@@ -367,15 +335,15 @@ ul {
     }
 
     .home-text-container p {
-        font-size: 1.0rem;
-        padding: 0; 
+        font-size: 1rem;
+        padding: 0;
         margin-bottom: 30px;
     }
 
     .home-text-container .links-button {
         padding: 15px;
         font-size: 1.1rem;
-        width: 70%; 
+        width: 70%;
         box-sizing: border-box;
     }
 }
