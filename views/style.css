@@ -107,7 +107,7 @@ ul {
 				margin: 12px 0 0 0;
 				color: rgb(116, 51, 181);
 				font: 500;
-				font-size: clamp(0.75rem, 1.3vw, 2rem);
+				font-size: clamp(0.85rem, 1.3vw, 2rem);
 				font-family: "Lucida Sans";
 				text-shadow: 1px 1px rgb(170, 169, 169);
 				background-color: rgb(245, 249, 253);
@@ -252,6 +252,7 @@ ul {
 
 		h1 {
 			padding-top: 10px;
+			margin-bottom: 10px;
 			img {
 				width: 50px;
 				height: 30px;
@@ -274,7 +275,7 @@ ul {
 				}
 
 				p {
-					text-shadow: 0.5px 0.5px rgb(170, 169, 169);
+					text-shadow: 0.5px 0.4px rgb(170, 169, 169);
 				}
 
 				.honeymoon,
