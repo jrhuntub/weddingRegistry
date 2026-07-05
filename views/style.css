@@ -107,9 +107,9 @@ ul {
 				margin: 12px 0 0 0;
 				color: rgb(116, 51, 181);
 				font: 500;
-				font-size: clamp(0.85rem, 1.3vw, 2rem);
+				font-size: clamp(0.85rem, 1.2vw, 2rem);
 				font-family: "Lucida Sans";
-				text-shadow: 1px 1px rgb(170, 169, 169);
+				text-shadow: .5px .5px rgb(170, 169, 169);
 				background-color: rgb(245, 249, 253);
 				border-radius: 50px;
 				box-shadow: 1px 1px rgb(152, 92, 212);
@@ -313,13 +313,18 @@ ul {
 				}
 
 				.Walmart img {
-					width: 98px;
-					height: 64px;
+					width: 120px;
+					height: 75px;
 				}
 
 				.target img {
-					width: 120px;
-					height: 67px;
+					width: 160px;
+					height: 90px;
+				}
+
+				.Amazon img {
+					width: 150px;
+					height: 100px;
 				}
 
 				.honeymoon img,
@@ -328,8 +333,8 @@ ul {
 				.paypal img,
 				.venmo img,
 				.back img {
-					width: 90px;
-					height: 80px;
+					width: 110px;
+					height: 110px;
 				}
 
 				.apple {
@@ -341,7 +346,7 @@ ul {
 
 	#homeContent {
 		flex-direction: column;
-		padding: 20px 15px;
+		padding: 30px 15px;
 		gap: 25px;
 
 		.home-image-container {
