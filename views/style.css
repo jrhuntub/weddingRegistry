@@ -188,7 +188,7 @@ ul {
 	flex: 1;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: top;
 	text-align: center;
 
 	h2 {
@@ -248,7 +248,10 @@ ul {
 	}
 
 	#linksPage {
+		padding: 10px 25px;
+
 		h1 {
+			padding-top: 10px;
 			img {
 				width: 50px;
 				height: 30px;
@@ -282,12 +285,14 @@ ul {
 				.cashApp,
 				.paypal,
 				.venmo,
-				.back {
-					padding: 0 10px;
+				.back,
+				.Amazon,
+				.RSVP,
+				.Belk {
+					padding: 5px 28px;
 				}
 
 				.RSVP {
-					padding: 0 13px;
 					img {
 						width: 180px;
 						height: 120px;
@@ -295,7 +300,6 @@ ul {
 				}
 
 				.Belk {
-					padding: 0 12px;
 					img {
 						width: 90px;
 						height: 37px;
@@ -350,6 +354,11 @@ ul {
 		}
 	}
 
+	.home-text-container {
+		margin: 0;
+		padding: 0;
+	}
+
 	.home-text-container h2 {
 		font-size: 2.5rem;
 		margin-bottom: 5px;
@@ -358,7 +367,7 @@ ul {
 	.home-text-container p {
 		font-size: 1rem;
 		padding: 0;
-		margin-bottom: 30px;
+		margin-bottom: 25px;
 	}
 
 	.home-text-container .links-button {

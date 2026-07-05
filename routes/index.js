@@ -17,8 +17,12 @@ router.get('/', (req, res) => {
 
 // GET: Show Links (links)
 router.get('/links', (req, res) => {
-    // This tells Express to go up one folder (../), look in 'public', and send index.html
     res.sendFile(path.join(__dirname, '../views/links.html'));
+});
+
+// GET: Show registry only
+router.get('/registry', (req, res) => {
+    res.sendFile(path.join(__dirname, '../views/registry.html'));
 });
 
 router.get('/honeymoon', (req, res) => {
