@@ -25,6 +25,10 @@ router.get('/registry', (req, res) => {
     res.sendFile(path.join(__dirname, '../views/registry.html'));
 });
 
+router.get('/registryLinks', (req, res) => {
+    res.sendFile(path.join(__dirname, '../views/registryLinks.html'));
+});
+
 router.get('/honeymoon', (req, res) => {
     res.sendFile(path.join(__dirname, '../views/honeymoon.html'));
 });
