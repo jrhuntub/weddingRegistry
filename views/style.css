@@ -107,7 +107,7 @@ ul {
 				margin: 12px 0 0 0;
 				color: rgb(116, 51, 181);
 				font: 500;
-				font-size: clamp(0.85rem, 1.2vw, 2rem);
+				font-size: clamp(0.9rem, 1.2vw, 2rem);
 				font-family: "Lucida Sans";
 				text-shadow: .5px .5px rgb(170, 169, 169);
 				background-color: rgb(245, 249, 253);
@@ -252,7 +252,7 @@ ul {
 
 		h1 {
 			padding-top: 10px;
-			margin-bottom: 10px;
+			margin-bottom: 5px;
 			img {
 				width: 50px;
 				height: 30px;
