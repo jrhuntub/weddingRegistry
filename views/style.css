@@ -17,9 +17,9 @@ body {
 	background-repeat: no-repeat;
 	background-size: cover;
 	border-bottom: none;
-	padding-top: max(15px, env(safe-area-inset-top)); 
-    padding-bottom: 15px;
-    padding-left: 3%;
+	padding-top: max(15px, env(safe-area-inset-top));
+	padding-bottom: 15px;
+	padding-left: 3%;
 
 	h1 {
 		display: flex;
@@ -59,6 +59,7 @@ ul {
 
 #linksPage {
 	flex-direction: column;
+
 	h1 {
 		display: flex;
 		max-width: 90%;
@@ -146,6 +147,7 @@ ul {
 			}
 
 			.honeymoon,
+			.honeymoonR,
 			.applePay,
 			.cashApp,
 			.paypal,
@@ -156,11 +158,15 @@ ul {
 
 			.Belk,
 			.Kohls,
-			.Walmart {
+			.Walmart,
+			.BelkR,
+			.KohlsR,
+			.WalmartR {
 				padding: 35px 10px;
 			}
 
-			.target {
+			.target,
+			.targetR {
 				padding: 31px 10px;
 			}
 
@@ -253,6 +259,7 @@ ul {
 		h1 {
 			padding-top: 10px;
 			margin-bottom: 5px;
+
 			img {
 				width: 50px;
 				height: 30px;
@@ -289,7 +296,13 @@ ul {
 				.back,
 				.Amazon,
 				.RSVP,
-				.Belk {
+				.Belk,
+				.honeymoonR,
+				.KohlsR,
+				.targetR,
+				.WalmartR,
+				.AmazonR,
+				.BelkR {
 					padding: 5px 28px;
 				}
 
@@ -300,34 +313,48 @@ ul {
 					}
 				}
 
-				.Belk {
+				.Belk,
+				.BelkR {
 					img {
 						width: 90px;
 						height: 37px;
 					}
 				}
 
-				.Kohls img {
-					width: 90px;
-					height: 25px;
+				.Kohls,
+				.KohlsR {
+					img {
+						width: 90px;
+						height: 25px;
+					}
 				}
 
-				.Walmart img {
-					width: 120px;
-					height: 75px;
+				.Walmart,
+				.WalmartR {
+					img {
+						width: 120px;
+						height: 75px;
+					}
 				}
 
-				.target img {
-					width: 160px;
-					height: 90px;
+				.target,
+				.targetR {
+					img {
+						width: 160px;
+						height: 90px;
+					}
 				}
 
-				.Amazon img {
-					width: 150px;
-					height: 100px;
+				.Amazon,
+				.AmazonR {
+					img {
+						width: 150px;
+						height: 100px;
+					}
 				}
 
 				.honeymoon img,
+				.honeymoonR img,
 				.applePay img,
 				.cashApp img,
 				.paypal img,
