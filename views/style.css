@@ -431,7 +431,9 @@ ul {
 @media screen and (max-width: 722px) {
     #invitePage .invite-envelope-wrapper {
         transform: scale(0.75);
+		margin-top: 0px; 
 	}
+
 	#head {
 		h1 {
 			font-size: 30px;
