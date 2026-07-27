@@ -429,9 +429,13 @@ ul {
 }
 
 @media screen and (max-width: 722px) {
+	#invitePage {
+		justify-content: start;
+	}
+
     #invitePage .invite-envelope-wrapper {
         transform: scale(0.75);
-		margin-top: 0px; 
+		margin-top: 175px; 
 	}
 
 	#head {
