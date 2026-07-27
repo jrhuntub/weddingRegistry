@@ -238,6 +238,187 @@ ul {
 	}
 }
 
+#invitePage {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center;     /* Centers vertically */
+    min-height: 100vh;       /* Makes sure the section takes up the full screen height */
+    flex-direction: column;
+    overflow: hidden;        /* Keeps screen clean when card slides out */
+    background: radial-gradient(circle at top left, rgb(233, 220, 245) 0%, rgb(205, 189, 221) 60%, rgb(184, 162, 206) 100%); /* Keeps your background theme */
+
+    .invite-envelope-wrapper {
+        position: relative;
+        cursor: pointer;
+        perspective: 1200px;
+        margin-top: 120px; /* Added room at the top so the taller card doesn't hit the screen edge */
+
+        .invite-envelope {
+            position: relative;
+            width: 450px; /* Scaled up the overall envelope */
+            height: 320px; 
+            background-color: rgb(215, 198, 226); /* Envelope interior */
+            border-radius: 4px;
+            box-shadow: 0 10px 25px rgba(27, 3, 34, 0.459);
+
+            /* Flaps */
+            .invite-flap {
+                position: absolute;
+                width: 0;
+                height: 0;
+                border-style: solid;
+
+                &.bottom {
+                    bottom: 0;
+                    border-width: 0 225px 160px 225px;
+                    border-color: transparent transparent rgb(233, 220, 245) transparent;
+                    z-index: 3;
+                }
+
+                &.left {
+                    left: 0;
+                    border-width: 160px 0 160px 225px;
+                    border-color: transparent transparent transparent rgb(222, 206, 237);
+                    z-index: 3;
+                }
+
+                &.right {
+                    right: 0;
+                    border-width: 160px 225px 160px 0;
+                    border-color: transparent rgb(222, 206, 237) transparent transparent;
+                    z-index: 3;
+                }
+
+                &.top {
+                    top: 0;
+                    border-width: 160px 225px 0 225px;
+                    border-color: rgb(205, 189, 221) transparent transparent transparent;
+                    transform-origin: top;
+                    z-index: 4;
+                    transition: transform 0.6s ease-in-out 0.4s;
+                }
+            }
+
+            /* Invitation Card */
+            .invite-letter {
+                position: absolute;
+                bottom: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 320px;  /* Narrower width to create a portrait aspect ratio */
+                height: 300px; /* Much taller height to fit the graphic */
+                background-color: #ffffff;
+                border-radius: 6px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                text-align: center;
+                box-sizing: border-box;
+                z-index: 2;
+                transition: transform 0.8s ease-in-out, z-index 0s 0.8s;
+                
+                padding: 15px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+
+                /* New image styles */
+                .invite-card-img {
+                    width: 100%;
+                    height: 220px;
+                    object-fit: contain;
+                    border-radius: 4px;
+                    cursor: pointer; /* <--- ADD THIS */
+                    transition: transform 0.2s ease;
+                }
+
+                .invite-card-img:hover {
+                    transform: scale(1.02); /* Slight zoom on hover to show it's clickable */
+                }
+
+                .invite-rsvp-btn {
+                    display: inline-block;
+                    padding: 10px 24px;
+                    background-color: rgb(244, 239, 252);
+                    color: rgb(116, 51, 181);
+                    font-family: "Lucida Sans", sans-serif;
+                    font-weight: bold;
+                    font-size: 0.95rem;
+                    border-radius: 20px;
+                    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+                    transition: transform 0.2s ease, background-color 0.2s ease;
+
+                    &:hover {
+                        transform: translateY(-2px);
+                        color: rgb(84, 8, 107);
+                        background-color: #ffffff;
+                    }
+                }
+            }
+        }
+
+        /* Animated State */
+        &.open {
+            .invite-flap.top {
+                transform: rotateX(180deg);
+                transition: transform 0.6s ease-in-out;
+            }
+
+            .invite-letter {
+                transform: translate(-50%, -190px); /* Slides up further to clear the taller card */
+                z-index: 5;
+                transition: transform 0.8s ease-in-out 0.4s, z-index 0s 0.4s;
+            }
+        }
+    }
+}	
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000; /* Sit on top of everything */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* Dark overlay */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.modal.show {
+    display: flex; /* Shown via JavaScript */
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90vh;
+    border-radius: 8px;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.5);
+    animation: zoomIn 0.3s ease;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 45px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: rgb(184, 162, 206); /* Matches your lavender theme */
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
 @media screen and (max-width: 1530px) {
 	#linksPage {
 		#linkList ul {
@@ -248,6 +429,9 @@ ul {
 }
 
 @media screen and (max-width: 722px) {
+    #invitePage .invite-envelope-wrapper {
+        transform: scale(0.75);
+	}
 	#head {
 		h1 {
 			font-size: 30px;

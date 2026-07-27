@@ -37,5 +37,9 @@ router.get('/honeymoonRegistry', (req, res) => {
     res.sendFile(path.join(__dirname, '../views/honeymoonRegistry.html'));
 });
 
+router.get('/invitation', (req, res) => {
+    res.sendFile(path.join(__dirname, '../views/invitation.html'));
+});
+
 
 export default router;
