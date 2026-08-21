@@ -29,7 +29,7 @@ jobs:
         run: npx playwright install --with-deps chromium
 
       - name: Run Scraper
-        run: node scraper.js
+        run: node scraper.cjs
 
       - name: Commit and Push Changes
         run: |
