@@ -1,8 +1,8 @@
 {
-  "target": 0,
+  "target": 2,
   "amazon": 3,
   "walmart": 4,
-  "belk": 2,
+  "belk": 0,
   "total": 9,
-  "lastUpdated": "2026-08-22T01:20:17.843Z"
+  "lastUpdated": "2026-08-22T06:43:40.562Z"
 }
