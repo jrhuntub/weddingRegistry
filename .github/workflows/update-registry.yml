@@ -3,7 +3,7 @@ name: Update Registry Stats
 # Run the scraper every 6 hours and allow manual triggering
 on:
   schedule:
-    - cron: '0 */6 * * *'
+    - cron: '0 */3 * * *'
   workflow_dispatch: 
 
 # Give the bot permission to push the updated JSON file back to your repo
