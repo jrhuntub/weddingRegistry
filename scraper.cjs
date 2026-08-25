@@ -1,4 +1,4 @@
-// 1. Stealth mode enabled for Walmart & anti-bot protection
+// 1. Stealth mode enabled for anti-bot protection
 const { chromium } = require('playwright-extra');
 const stealth = require('puppeteer-extra-plugin-stealth')();
 chromium.use(stealth);
@@ -62,16 +62,37 @@ async function getPurchasedCount(url, retailer) {
       await page.waitForSelector('[data-testid="HeaderCount-purchased"]', { timeout: 60000 });
     }
     else if (retailer === 'Belk') {
-      // 1. Wait for the toggle switch to appear
+      console.log('  -> Checking for Belk CAPTCHA...');
+      
+      try {
+        const pxShield = page.locator('#px-captcha-modal');
+        await pxShield.waitFor({ state: 'visible', timeout: 5000 });
+        
+        console.log('  -> Belk CAPTCHA detected! Attempting bypass...');
+        const box = await pxShield.boundingBox();
+        if (box) {
+          await page.mouse.move(box.x + box.width / 2, box.y + box.height / 2);
+          await page.mouse.down(); 
+          await page.waitForTimeout(10000); 
+          await page.mouse.up(); 
+          await page.waitForTimeout(5000); 
+        }
+      } catch (e) {
+        // No CAPTCHA popped up
+      }
+
       const toggleSwitch = page.locator('#registry-show-purchased-items');
       await toggleSwitch.waitFor({ timeout: 60000 });
 
-      // 2. Check if the toggle is unchecked; click if needed
       const state = await toggleSwitch.getAttribute('data-state');
       if (state === 'unchecked') {
-        console.log('  -> Flipping "Show Purchased Items" switch on Belk...');
-        await toggleSwitch.click();
-        await page.waitForTimeout(3000); // Allow list to re-render
+        console.log('  -> Flipping "Show Purchased Items" switch via JavaScript injection...');
+        
+        // JS INJECTION: Triggers the click internally, making it impossible for the shield to block
+        await toggleSwitch.evaluate(node => node.click());
+        
+        console.log('  -> Waiting for purchased items to load...');
+        await page.waitForTimeout(5000); // Allow list to re-render
       }
     }
 
@@ -116,10 +137,9 @@ async function getPurchasedCount(url, retailer) {
       else if (retailerName === 'Belk') {
         const itemRows = Array.from(document.querySelectorAll('li'));
         itemRows.forEach(row => {
-          const text = row.innerText;
-          
-          // Match full fulfillment
-          if (text.includes('Gift fulfilled')) {
+          // Using textContent to bypass HTML structure, and regex to ignore line breaks
+          const text = row.textContent || '';
+          if (/Gift\s+fulfilled/i.test(text)) {
             count += 1;
           }
         });
@@ -128,10 +148,11 @@ async function getPurchasedCount(url, retailer) {
       return count;
     }, retailer);
 
-    return { retailer, purchasedCount };
+    return { retailer, purchasedCount, error: false };
 
   } catch (error) {
     console.error(`Error checking ${retailer}:`, error.message);
+    // Flag an error so our memory system knows it failed
     return { retailer, purchasedCount: 0, error: true };
   } finally {
     await browser.close();
@@ -146,14 +167,41 @@ async function getPurchasedCount(url, retailer) {
     { url: 'https://www.belk.com/registry-results/?ID=16daea1fd741acd0bf531109ce&scope=giftregistrysearch', name: 'Belk' }
   ];
 
+  // ==========================================
+  // MEMORY SYSTEM (Read previous stats)
+  // ==========================================
+  let previousStats = {};
+  if (fs.existsSync('registry-stats.json')) {
+    try {
+      const rawData = fs.readFileSync('registry-stats.json', 'utf8');
+      previousStats = JSON.parse(rawData);
+      console.log('Loaded previous stats for fallback memory.');
+    } catch (e) {
+      console.log('No previous stats found or error reading them.');
+    }
+  }
+
   let stats = {};
   let totalPurchased = 0;
 
   for (const registry of registries) {
     const data = await getPurchasedCount(registry.url, registry.name);
-    console.log(`✔ ${data.retailer}: ${data.purchasedCount} items purchased`);
-    stats[data.retailer.toLowerCase()] = data.purchasedCount;
-    totalPurchased += data.purchasedCount;
+    const key = data.retailer.toLowerCase();
+    let finalCount = data.purchasedCount;
+
+    // ==========================================
+    // FALLBACK LOGIC
+    // ==========================================
+    // If the scraper returns 0, null, or threw an error, check if we have a previous number > 0 to use instead.
+    if ((finalCount === 0 || !finalCount || data.error) && previousStats[key] > 0) {
+      console.log(`  -> ⚠️ ${data.retailer} returned ${finalCount} or errored. Falling back to known value: ${previousStats[key]}`);
+      finalCount = previousStats[key];
+    } else {
+      console.log(`✔ ${data.retailer}: ${finalCount} items purchased`);
+    }
+
+    stats[key] = finalCount;
+    totalPurchased += finalCount;
   }
 
   stats.total = totalPurchased;
